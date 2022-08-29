@@ -1,4 +1,4 @@
-
+import lxml
 import requests
 import urllib
 import sys
@@ -7,6 +7,8 @@ import pandas as pd
 import numpy as np
 from bs4 import BeautifulSoup
 import selenium
+import pathlib
+from pathlib import Path
 
 # Common Definitions
 
@@ -144,10 +146,9 @@ textHex = {
 # Miscellaneous Records
 
 miscLinks = {
-
-'endElementRecord ': 'https://docs.microsoft.com/en-us/openspecs/windows_protocols/mc-nbfx/dba7ab5e-1789-42d7-acdd-6e4556b1553b',
-'commentRecord': 'https://docs.microsoft.com/en-us/openspecs/windows_protocols/mc-nbfx/298c6768-9f19-46ed-a4e3-3f656655fe00',
-'arrayRecord': 'https://docs.microsoft.com/en-us/openspecs/windows_protocols/mc-nbfx/e0cd55a8-016d-4bb7-924e-a8b7add5d52b'
+   'endElementRecord ': 'https://docs.microsoft.com/en-us/openspecs/windows_protocols/mc-nbfx/dba7ab5e-1789-42d7-acdd-6e4556b1553b',
+   'commentRecord': 'https://docs.microsoft.com/en-us/openspecs/windows_protocols/mc-nbfx/298c6768-9f19-46ed-a4e3-3f656655fe00',
+   'arrayRecord': 'https://docs.microsoft.com/en-us/openspecs/windows_protocols/mc-nbfx/e0cd55a8-016d-4bb7-924e-a8b7add5d52b'
 }
 
 
@@ -166,5 +167,16 @@ import pathlib
 from pathlib import Path
 import pandas as pd
 import numpy as np
-page = requests.get('url')
-frames = pd.read_html(page.text)
+import argparse
+from argparse import ArgumentParser
+import lxml
+from lxml import etree
+
+# Global Variables
+
+pages = []
+frames = []
+
+pd.read_html(page.text)
+
+ requests.get('url')
