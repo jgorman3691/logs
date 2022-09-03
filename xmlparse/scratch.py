@@ -167,5 +167,16 @@ import pathlib
 from pathlib import Path
 import pandas as pd
 import numpy as np
-page = requests.get('url')
-frames = pd.read_html(page.text)
+import argparse
+from argparse import ArgumentParser
+import lxml
+from lxml import etree
+
+# Global Variables
+
+pages = []
+frames = []
+
+pd.read_html(page.text)
+
+ requests.get('url')
